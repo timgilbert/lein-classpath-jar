@@ -39,7 +39,7 @@ This is intended to work as a user-level plugin. To use it, add this to
 the `:plugins` vector of your `:user` profile: 
 
 ```clojure
-[lein-classpath-jar "0.1.0-SNAPSHOT"]
+{:user {:plugins [[lein-classpath-jar "0.1.0"]]}}
 ```
 
 ## License
