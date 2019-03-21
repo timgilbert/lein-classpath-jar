@@ -16,13 +16,26 @@ when compare to most Unix-based OSes. Depending on various factors, the
 maximum length can range from 8191 characters to 32K characters, but even 
 32K may not be enough for some applications with a large dependency tree.
 
+The symptom of this is usually that you'll get an exception from
+running `lein repl` that resembles this:
+
+```
+Exception in thread "Thread-2" java.io.IOException: Cannot run program "java" (in directory "C:\Users\tim\blah"): CreateProcess error=206, The filename or extension is too long
+        at java.lang.ProcessBuilder.start(ProcessBuilder.java:1048)
+        [...]
+Caused by: java.io.IOException: CreateProcess error=206, The filename or extension is too long
+        at java.lang.ProcessImpl.create(Native Method)
+        [...]
+```
+
 The usual solution to this problem for JVM-based Windows development is 
 to create a "pathing jar" - that is, a jar which only contains a Manifest
 that points to the various jar files that make up the entire classpath 
 of the program. Java can then be invoked via `java -cp pathing.jar clojure.main`
 and the resulting JVM will have the proper classpath.
 
-More information can be found in [this tools.deps.alpha ticket](https://dev.clojure.org/jira/browse/TDEPS-120).
+More information can be found in the tools.deps ticket 
+[TDEPS-120](https://dev.clojure.org/jira/browse/TDEPS-120).
 
 ## What this plugin does
 
