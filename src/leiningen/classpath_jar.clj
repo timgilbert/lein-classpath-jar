@@ -1,5 +1,5 @@
-(ns leiningen.classpath-jar
+(ns leiningen.classpath-jar)
 
 (defn classpath-jar
-  "I don't do a lot."
-  [project & args]
+  "There is no main routine, we're just here to provide hooks."
+  [project & args])
