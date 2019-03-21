@@ -2,6 +2,8 @@
 
 A Leiningen plugin to work around long-classpath issues on Windows.
 
+[![Clojars Project](https://img.shields.io/clojars/v/lein-classpath-jar.svg)](https://clojars.org/lein-classpath-jar)
+
 ## Background
 
 Most Clojure tooling, including lein, run programs by constructing 
